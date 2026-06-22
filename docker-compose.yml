@@ -13,7 +13,15 @@ services:
       db:
         condition: service_healthy
     environment:
-      - CI_ENVIRONMENT=development
+      # Default = development (untuk lokal). Di VPS, set via file .env (root)
+      # supaya tidak perlu mengubah file ini:
+      #   CI_ENVIRONMENT=production
+      #   APP_BASE_URL=https://nfmtech.my.id/landingpage/intawaantour/
+      - CI_ENVIRONMENT=${CI_ENVIRONMENT:-development}
+      # baseURL HARUS lengkap dengan sub-path agar redirect (mis. /admin ->
+      # /admin/login) tidak kehilangan prefix & tidak turun ke http di balik
+      # reverse-proxy nginx. CI4 memetakan env "app.baseURL" -> Config\App::$baseURL.
+      - app.baseURL=${APP_BASE_URL:-http://localhost:8082/}
     restart: unless-stopped
 
   # ------------------------------------------------------------------
