@@ -24,6 +24,11 @@
     button{width:100%;padding:13px;border:0;border-radius:10px;background:#0ea5a4;color:#fff;font-weight:700;font-size:15px;cursor:pointer;transition:background .12s}
     button:hover{background:#0c8a89}
     .alert{background:#fef2f2;color:#991b1b;padding:11px 14px;border-radius:10px;margin-bottom:18px;font-size:14px;font-weight:500;border:1px solid #fecaca}
+    .captcha-row{display:flex;align-items:center;gap:10px}
+    .captcha-row img{border:1px solid #e2e8f0;border-radius:8px;height:50px;width:150px;background:#f5f7fa}
+    .captcha-row button{width:auto;padding:0 12px;height:50px;background:#f1f5f9;color:#0f172a;font-size:13px;border:1px solid #e2e8f0}
+    .captcha-row button:hover{background:#e2e8f0}
+    .captcha-field input{text-transform:uppercase;letter-spacing:.18em;font-weight:600}
   </style>
 </head>
 <body>
@@ -45,7 +50,22 @@
       <label for="password">Password</label>
       <input type="password" id="password" name="password" required>
     </div>
+    <div class="field captcha-field">
+      <label for="captcha">Kode Captcha</label>
+      <div class="captcha-row">
+        <img id="captchaImg" src="<?= site_url('admin/captcha') ?>" alt="Kode captcha">
+        <button type="button" id="captchaReload" title="Muat ulang kode">&#8635;</button>
+      </div>
+      <input type="text" id="captcha" name="captcha" maxlength="5" required autocomplete="off"
+             inputmode="latin" placeholder="Masukkan 5 karakter di atas" style="margin-top:10px">
+    </div>
     <button type="submit">Masuk</button>
+    <script>
+      document.getElementById('captchaReload').addEventListener('click', function () {
+        document.getElementById('captchaImg').src = '<?= site_url('admin/captcha') ?>?t=' + Date.now();
+        document.getElementById('captcha').value = '';
+      });
+    </script>
   </form>
 </body>
 </html>

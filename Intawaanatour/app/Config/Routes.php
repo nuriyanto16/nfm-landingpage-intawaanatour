@@ -24,6 +24,9 @@ $routes->post('booking', 'Booking::store');
 
 $routes->get('lang/(:segment)', 'Language::set/$1');
 
+// CAPTCHA (gambar, dipakai di form login admin)
+$routes->get('admin/captcha', 'Captcha::image');
+
 // SEO
 $routes->get('sitemap.xml', 'Seo::sitemap');
 $routes->get('robots.txt', 'Seo::robots');

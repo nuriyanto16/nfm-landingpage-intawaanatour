@@ -118,8 +118,16 @@ if (! function_exists('save_upload')) {
             return null;
         }
 
-        $allowed = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
-        if (! in_array($file->getMimeType(), $allowed, true)) {
+        // Batas ukuran 5 MB
+        if ($file->getSize() > 5 * 1024 * 1024) {
+            return null;
+        }
+
+        // Whitelist MIME (deteksi isi) DAN ekstensi — tolak selain gambar
+        $allowedMime = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+        $allowedExt  = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+        if (! in_array($file->getMimeType(), $allowedMime, true)
+            || ! in_array(strtolower((string) $file->getExtension()), $allowedExt, true)) {
             return null;
         }
 

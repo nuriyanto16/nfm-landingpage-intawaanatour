@@ -53,8 +53,12 @@ class Cookie extends BaseConfig
      * --------------------------------------------------------------------------
      *
      * Cookie will only be set if a secure HTTPS connection exists.
+     *
+     * Aktif otomatis di produksi (situs publik HTTPS) agar cookie sesi/CSRF
+     * hanya dikirim lewat HTTPS. Tetap false di development agar akses
+     * langsung lewat http://localhost tidak putus.
      */
-    public bool $secure = false;
+    public bool $secure = (ENVIRONMENT === 'production');
 
     /**
      * --------------------------------------------------------------------------

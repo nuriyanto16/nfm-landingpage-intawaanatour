@@ -80,9 +80,25 @@ ServerSignature Off
 		Header set Cache-Control "public, max-age=31536000, immutable"
 	</FilesMatch>
 	# Keamanan dasar
-	Header set X-Content-Type-Options "nosniff"
+	Header always set X-Content-Type-Options "nosniff"
 	Header always set X-Frame-Options "SAMEORIGIN"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+	Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+	Header always set Cross-Origin-Opener-Policy "same-origin"
+	# Content Security Policy — izinkan inline style/script (dipakai tema & handler onclick),
+	# Google Fonts, gambar https/data, video lokal; blokir objek & framing lintas situs.
+	Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+	# Sembunyikan teknologi backend
+	Header always unset X-Powered-By
+	Header unset X-Powered-By
 </IfModule>
+
+# ----------------------------------------------------------------------
+# Blokir akses ke file sensitif / tersembunyi
+# ----------------------------------------------------------------------
+<FilesMatch "(^\.|\.(env|ini|log|sh|bak|sql|md|lock|json|dist)$)">
+	Require all denied
+</FilesMatch>
 
 # Keep-Alive
 <IfModule mod_headers.c>

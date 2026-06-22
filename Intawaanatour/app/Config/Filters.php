@@ -75,12 +75,12 @@ class Filters extends BaseFilters
     public array $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            'csrf',         // Proteksi CSRF untuk semua request yang mengubah state (POST/PUT/DELETE)
+            'invalidchars', // Tolak karakter kontrol / UTF-8 tidak valid pada input
         ],
         'after' => [
             // 'honeypot',
-            // 'secureheaders',
+            // 'secureheaders', // Tidak dipakai: header keamanan diset di public/.htaccess (sumber tunggal, hindari header ganda)
         ],
     ];
 
