@@ -1,0 +1,31 @@
+# =====================================================================
+#  Root .gitignore — Website Intawaanatour (NFM Tech)
+# =====================================================================
+
+# --- Kredensial & rahasia (JANGAN PERNAH di-push) -------------------
+CREDENTIAL.md
+*.pem
+*.key
+
+# --- Data database persisten (besar, dibind dari container) ----------
+/mariadb/
+/Intawaanatour/mariadb/
+
+# --- Materi mentah & hasil capture (besar, tidak perlu di repo) ------
+/bahan/
+/_captures/
+
+# --- Konfigurasi agen / IDE lokal -----------------------------------
+/.claude/
+*.code-workspace
+.vscode/
+.idea/
+
+# --- Environment (berisi kredensial DB) -----------------------------
+.env
+
+# --- OS junk --------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
