@@ -4,18 +4,18 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero__bg"><img src="<?= base_url('assets/img/hero.jpg') ?>" alt="<?= t('Speedboat Intawaanatour di perairan Labuan Bajo', 'Intawaanatour speedboat in Labuan Bajo waters') ?>" width="1920" height="1080" fetchpriority="high"></div>
+  <div class="hero__bg"><img src="<?= base_url('assets/img/hero.jpg') ?>" alt="<?= t('Speedboat Inta Waana Tour di perairan Labuan Bajo', 'Inta Waana Tour speedboat in Labuan Bajo waters') ?>" width="1920" height="1080" fetchpriority="high"></div>
   <div class="container">
     <div class="hero__inner">
       <span class="eyebrow" style="color:var(--gold)"><?= t('Sewa Speedboat • Labuan Bajo • Komodo', 'Speedboat Charter • Labuan Bajo • Komodo') ?></span>
-      <h1><?= t('Jelajahi Surga Komodo Bersama Intawaanatour', 'Explore the Paradise of Komodo with Intawaanatour') ?></h1>
+      <h1><?= t('Jelajahi Surga Komodo Bersama Inta Waana Tour', 'Explore the Paradise of Komodo with Inta Waana Tour') ?></h1>
       <p class="lead"><?= t(
           'Nikmati perjalanan cepat, nyaman, dan berkelas menuju Pulau Padar, Pink Beach, Manta Point, dan destinasi terbaik Taman Nasional Komodo.',
           'Enjoy a fast, comfortable and elegant journey to Padar Island, Pink Beach, Manta Point and the best destinations of Komodo National Park.'
       ) ?></p>
       <div class="hero__actions">
         <a href="<?= base_url('trips') ?>" class="btn btn--primary"><?= t('Lihat Paket Trip', 'View Trip Packages') ?></a>
-        <a href="<?= wa_link(t('Halo Intawaanatour, saya tertarik dengan trip Labuan Bajo.', 'Hi Intawaanatour, I am interested in a Labuan Bajo trip.')) ?>" class="btn btn--ghost" target="_blank" rel="noopener"><?= t('Chat WhatsApp', 'Chat on WhatsApp') ?></a>
+        <a href="<?= wa_link(t('Halo Inta Waana Tour, saya tertarik dengan trip Labuan Bajo.', 'Hi Inta Waana Tour, I am interested in a Labuan Bajo trip.')) ?>" class="btn btn--ghost" target="_blank" rel="noopener"><?= t('Chat WhatsApp', 'Chat on WhatsApp') ?></a>
       </div>
     </div>
   </div>
@@ -26,15 +26,15 @@
 <section class="section">
   <div class="container split">
     <div class="split__media reveal">
-      <img src="<?= base_url('assets/img/about.jpg') ?>" alt="<?= t('Armada speedboat Intawaanatour', 'Intawaanatour speedboat fleet') ?>" loading="lazy">
-      <div class="badge">5★<small><?= t('Rating Tamu', 'Guest Rating') ?></small></div>
+      <img src="<?= base_url('assets/img/about.jpg') ?>" alt="<?= t('Armada speedboat Inta Waana Tour', 'Inta Waana Tour speedboat fleet') ?>" loading="lazy">
+      <div class="badge">2×100<small>HP Suzuki</small></div>
     </div>
     <div class="reveal">
       <span class="eyebrow"><?= t('Tentang Kami', 'About Us') ?></span>
       <h2><?= t('Petualangan Laut yang Cepat, Aman, dan Berkesan', 'Sea Adventures that are Fast, Safe and Memorable') ?></h2>
       <p><?= t(
-          'Intawaanatour adalah penyedia jasa sewa speedboat di Labuan Bajo yang mengutamakan kecepatan, kenyamanan, dan keselamatan. Armada modern kami dirancang untuk membawa Anda menjelajahi Taman Nasional Komodo tanpa kompromi.',
-          'Intawaanatour is a speedboat charter provider in Labuan Bajo that prioritizes speed, comfort and safety. Our modern fleet is designed to take you across Komodo National Park without compromise.'
+          'Inta Waana Tour adalah penyedia jasa sewa speedboat di Labuan Bajo yang mengutamakan kecepatan, kenyamanan, dan keselamatan. Armada modern kami dirancang untuk membawa Anda menjelajahi Taman Nasional Komodo tanpa kompromi.',
+          'Inta Waana Tour is a speedboat charter provider in Labuan Bajo that prioritizes speed, comfort and safety. Our modern fleet is designed to take you across Komodo National Park without compromise.'
       ) ?></p>
       <ul class="checklist">
         <li><?= t('Speedboat cepat dengan kabin nyaman ber-AC', 'Fast speedboat with comfortable air-conditioned cabin') ?></li>
@@ -78,7 +78,7 @@
 <section class="section">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow"><?= t('Kenapa Intawaanatour', 'Why Intawaanatour') ?></span>
+      <span class="eyebrow"><?= t('Kenapa Inta Waana Tour', 'Why Inta Waana Tour') ?></span>
       <h2><?= t('Alasan Tamu Mempercayai Kami', 'Why Guests Trust Us') ?></h2>
     </div>
     <div class="grid grid--3">
@@ -106,10 +106,10 @@
   <div class="cta-band__bg"><img src="<?= base_url('assets/img/gal-padar.jpg') ?>" alt="Padar"></div>
   <div class="container">
     <div class="stats">
-      <div class="stat reveal"><b>1.200+</b><span><?= t('Tamu Puas', 'Happy Guests') ?></span></div>
-      <div class="stat reveal"><b>15+</b><span><?= t('Destinasi', 'Destinations') ?></span></div>
-      <div class="stat reveal"><b>5★</b><span><?= t('Rating Rata-rata', 'Average Rating') ?></span></div>
-      <div class="stat reveal"><b>6+</b><span><?= t('Tahun Pengalaman', 'Years Experience') ?></span></div>
+      <div class="stat reveal"><b>9</b><span><?= t('Kapasitas Tamu', 'Guest Capacity') ?></span></div>
+      <div class="stat reveal"><b>10+</b><span><?= t('Destinasi Komodo', 'Komodo Destinations') ?></span></div>
+      <div class="stat reveal"><b>8,31 m</b><span><?= t('Speedboat Fiberglass', 'Fiberglass Speedboat') ?></span></div>
+      <div class="stat reveal"><b>2×100</b><span><?= t('HP Mesin Suzuki', 'HP Suzuki Engine') ?></span></div>
     </div>
   </div>
 </section>

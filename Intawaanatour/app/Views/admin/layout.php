@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title><?= esc($title ?? 'Admin') ?> &middot; Intawaanatour</title>
+  <title><?= esc($title ?? 'Admin') ?> &middot; Inta Waana Tour</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -176,7 +176,7 @@
       <a href="<?= site_url('/') ?>" target="_blank" rel="noopener" data-no-skeleton>
         <svg class="ic" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M10 14 20 4"/><path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/></svg> Lihat Situs</a>
     </nav>
-    <div class="foot">&copy; <?= date('Y') ?> Intawaanatour</div>
+    <div class="foot">&copy; <?= date('Y') ?> Inta Waana Tour</div>
   </aside>
 
   <div class="main">

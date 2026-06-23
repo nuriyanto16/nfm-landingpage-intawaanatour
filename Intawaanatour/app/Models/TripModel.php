@@ -12,6 +12,7 @@ class TripModel extends Model
     protected $returnType    = 'array';
     protected $allowedFields = [
         'slug', 'type', 'title_id', 'title_en', 'price',
+        'promo_price', 'promo_label_id', 'promo_label_en', 'price_note_id', 'price_note_en',
         'duration_id', 'duration_en', 'capacity',
         'summary_id', 'summary_en', 'description_id', 'description_en',
         'itinerary_id', 'itinerary_en', 'cover_image',

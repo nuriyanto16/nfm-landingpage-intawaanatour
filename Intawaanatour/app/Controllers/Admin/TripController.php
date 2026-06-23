@@ -73,6 +73,12 @@ class TripController extends BaseController
             'title_id'       => $title,
             'title_en'       => $this->request->getPost('title_en'),
             'price'          => (float) $this->request->getPost('price'),
+            'promo_price'    => $this->request->getPost('promo_price') !== '' && $this->request->getPost('promo_price') !== null
+                ? (float) $this->request->getPost('promo_price') : null,
+            'promo_label_id' => $this->request->getPost('promo_label_id'),
+            'promo_label_en' => $this->request->getPost('promo_label_en'),
+            'price_note_id'  => $this->request->getPost('price_note_id'),
+            'price_note_en'  => $this->request->getPost('price_note_en'),
             'duration_id'    => $this->request->getPost('duration_id'),
             'duration_en'    => $this->request->getPost('duration_en'),
             'capacity'       => $this->request->getPost('capacity'),

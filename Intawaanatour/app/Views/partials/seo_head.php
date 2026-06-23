@@ -1,5 +1,5 @@
 <?php
-$siteName = setting('site_name', 'Intawaanatour');
+$siteName = setting('site_name', 'Inta Waana Tour');
 $title    = $meta['title'] ?? ($siteName . ' — ' . t('Speedboat Premium Labuan Bajo', 'Premium Speedboat Labuan Bajo'));
 $desc     = $meta['description'] ?? setting('meta_description', '');
 $image    = img_url($meta['image'] ?? 'assets/img/og-default.jpg');
@@ -30,6 +30,7 @@ $org = [
     'image'    => img_url('assets/img/og-default.jpg'),
     'description' => setting('meta_description'),
     'areaServed'  => 'Komodo National Park, Labuan Bajo',
+    'priceRange'  => 'Rp 1.100.000 - Rp 13.500.000',
     'address'  => [
         '@type'           => 'PostalAddress',
         'streetAddress'   => setting('address'),

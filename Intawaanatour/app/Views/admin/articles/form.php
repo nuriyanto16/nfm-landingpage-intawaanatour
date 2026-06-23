@@ -65,7 +65,7 @@
       </div>
       <div class="field">
         <label>Penulis</label>
-        <input type="text" name="author" value="<?= $v('author', 'Tim Intawaanatour') ?>">
+        <input type="text" name="author" value="<?= $v('author', 'Tim Inta Waana Tour') ?>">
       </div>
     </div>
     <div class="field">

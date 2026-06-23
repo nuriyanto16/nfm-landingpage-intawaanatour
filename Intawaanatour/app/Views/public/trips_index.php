@@ -11,9 +11,9 @@
   <div class="container">
     <div class="pills">
       <button class="pill active" data-filter="all"><?= t('Semua', 'All') ?></button>
-      <button class="pill" data-filter="private"><?= t('Private Trip', 'Private Trip') ?></button>
-      <button class="pill" data-filter="shared"><?= t('Shared Trip', 'Shared Trip') ?></button>
-      <button class="pill" data-filter="sunset"><?= t('Sunset Trip', 'Sunset Trip') ?></button>
+      <button class="pill" data-filter="private"><?= t('Private Charter', 'Private Charter') ?></button>
+      <button class="pill" data-filter="shared"><?= t('Open Trip', 'Open Trip') ?></button>
+      <button class="pill" data-filter="sunset"><?= t('Sunset', 'Sunset') ?></button>
     </div>
 
     <div class="grid grid--3">

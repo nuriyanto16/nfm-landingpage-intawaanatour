@@ -22,7 +22,13 @@ class SettingController extends BaseController
         'operating_hours',
         'instagram',
         'facebook',
+        'tiktok',
         'maps_embed',
+        // Banner penawaran spesial
+        'promo_active',
+        'promo_text_id',
+        'promo_text_en',
+        'promo_url',
     ];
 
     public function __construct()

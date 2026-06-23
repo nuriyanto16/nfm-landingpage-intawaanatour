@@ -3,7 +3,7 @@
 
 <?= partial('partials/page_hero', [
     'title'    => t('Galeri', 'Gallery'),
-    'subtitle' => t('Momen-momen indah perjalanan bersama Intawaanatour.', 'Beautiful moments from journeys with Intawaanatour.'),
+    'subtitle' => t('Momen-momen indah perjalanan bersama Inta Waana Tour.', 'Beautiful moments from journeys with Inta Waana Tour.'),
     'bg'       => 'gal-padar.jpg',
 ]) ?>
 

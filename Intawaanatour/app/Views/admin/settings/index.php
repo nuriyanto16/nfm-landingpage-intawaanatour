@@ -14,11 +14,18 @@
     'operating_hours'  => ['Jam Operasional', 'text'],
     'instagram'        => ['URL Instagram', 'url'],
     'facebook'         => ['URL Facebook', 'url'],
+    'tiktok'           => ['URL TikTok', 'url'],
     'maps_embed'       => ['Kode Embed Google Maps', 'textarea'],
+    'promo_active'     => ['Aktifkan Banner Promo', 'select'],
+    'promo_text_id'    => ['Teks Banner Promo (ID)', 'textarea'],
+    'promo_text_en'    => ['Teks Banner Promo (EN)', 'textarea'],
+    'promo_url'        => ['Link Tujuan Banner Promo', 'text'],
   ];
   $hints = [
-    'whatsapp'   => 'Format internasional tanpa tanda +, mis. 6281234567890',
-    'maps_embed' => 'Tempel seluruh kode &lt;iframe&gt; dari Google Maps &rarr; Bagikan &rarr; Sematkan peta',
+    'whatsapp'     => 'Format internasional tanpa tanda +, mis. 6281234567890',
+    'maps_embed'   => 'Tempel seluruh kode &lt;iframe&gt; dari Google Maps &rarr; Bagikan &rarr; Sematkan peta',
+    'promo_active' => '1 = banner tampil, 0 = sembunyikan',
+    'promo_url'    => 'Path internal (mis. trips) atau URL lengkap',
   ];
 ?>
 
@@ -41,6 +48,11 @@
         <?php $val = old($key, $settings[$key] ?? ''); ?>
         <?php if ($type === 'textarea'): ?>
           <textarea name="<?= esc($key) ?>"><?= esc($val) ?></textarea>
+        <?php elseif ($type === 'select'): ?>
+          <select name="<?= esc($key) ?>">
+            <option value="1" <?= $val === '1' ? 'selected' : '' ?>>Aktif</option>
+            <option value="0" <?= $val !== '1' ? 'selected' : '' ?>>Nonaktif</option>
+          </select>
         <?php else: ?>
           <input type="<?= esc($type) ?>" name="<?= esc($key) ?>" value="<?= esc($val) ?>">
         <?php endif; ?>

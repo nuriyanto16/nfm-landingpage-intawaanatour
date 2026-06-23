@@ -2,9 +2,9 @@
 <header class="site-header">
   <div class="container nav">
     <a href="<?= base_url('/') ?>" class="brand">
-      <img class="brand__logo" src="<?= base_url('assets/img/logo-mark.png') ?>" alt="<?= esc(setting('site_name', 'Intawaanatour')) ?>" width="44" height="44">
-      <span class="brand__name"><?= esc(setting('site_name', 'Intawaanatour')) ?>
-        <small><?= esc(t(setting('site_tagline_id', 'Speedboat Labuan Bajo'), setting('site_tagline_en', 'Speedboat Labuan Bajo'))) ?></small>
+      <img class="brand__logo" src="<?= base_url('assets/img/logo-mark.png') ?>" alt="<?= esc(setting('site_name', 'Inta Waana Tour')) ?>" width="44" height="44">
+      <span class="brand__name"><?= esc(setting('site_name', 'Inta Waana Tour')) ?>
+        <small><?= t('Speedboat Labuan Bajo · Komodo', 'Labuan Bajo · Komodo Speedboat') ?></small>
       </span>
     </a>
 

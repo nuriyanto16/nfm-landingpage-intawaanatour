@@ -36,19 +36,51 @@
         <label>Tipe Trip</label>
         <?php $type = old('type', $trip['type'] ?? 'private'); ?>
         <select name="type">
-          <option value="private" <?= $type === 'private' ? 'selected' : '' ?>>Private Trip</option>
-          <option value="open" <?= $type === 'open' ? 'selected' : '' ?>>Open Trip</option>
+          <option value="private" <?= $type === 'private' ? 'selected' : '' ?>>Private Charter</option>
+          <option value="shared" <?= $type === 'shared' ? 'selected' : '' ?>>Open Trip (gabung)</option>
+          <option value="sunset" <?= $type === 'sunset' ? 'selected' : '' ?>>Sunset (private)</option>
         </select>
       </div>
     </div>
     <div class="form-row">
       <div class="field">
-        <label>Harga (Rp)</label>
+        <label>Kapasitas</label>
+        <input type="text" name="capacity" value="<?= $v('capacity') ?>" placeholder="cth: 1–9 tamu / per orang">
+      </div>
+      <div class="field"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Harga &amp; Penawaran Spesial</h2>
+    <div class="form-row">
+      <div class="field">
+        <label>Harga Publish / Coret (Rp)</label>
         <input type="number" name="price" step="1000" min="0" value="<?= $v('price', '0') ?>">
       </div>
       <div class="field">
-        <label>Kapasitas</label>
-        <input type="text" name="capacity" value="<?= $v('capacity') ?>" placeholder="cth: 4-12 orang">
+        <label>Harga Penawaran Spesial (Rp) <span class="hint">kosongkan jika tidak ada promo</span></label>
+        <input type="number" name="promo_price" step="1000" min="0" value="<?= $v('promo_price') ?>">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label>Label Promo (ID)</label>
+        <input type="text" name="promo_label_id" value="<?= $v('promo_label_id') ?>" placeholder="Penawaran Spesial">
+      </div>
+      <div class="field">
+        <label>Label Promo (EN)</label>
+        <input type="text" name="promo_label_en" value="<?= $v('promo_label_en') ?>" placeholder="Special Offer">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label>Catatan Harga (ID)</label>
+        <input type="text" name="price_note_id" value="<?= $v('price_note_id') ?>" placeholder="cth: Harga per orang / tier 6–9 pax">
+      </div>
+      <div class="field">
+        <label>Catatan Harga (EN)</label>
+        <input type="text" name="price_note_en" value="<?= $v('price_note_en') ?>" placeholder="e.g. Price per person / 6–9 pax tier">
       </div>
     </div>
     <div class="form-row">

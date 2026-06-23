@@ -5,7 +5,7 @@
   <div class="card__body">
     <span class="post__date"><?= date('d M Y', strtotime($a['published_at'] ?? $a['created_at'])) ?></span>
     <h3 style="margin-top:.4rem"><a href="<?= base_url('articles/' . $a['slug']) ?>"><?= esc(tr($a, 'title')) ?></a></h3>
-    <p class="muted"><?= esc(character_limiter(tr($a, 'excerpt'), 110)) ?></p>
+    <p class="muted"><?= esc(character_limiter(tr($a, 'excerpt'), 110, '…')) ?></p>
     <div class="card__foot">
       <a href="<?= base_url('articles/' . $a['slug']) ?>" class="btn btn--outline btn--sm"><?= t('Baca Selengkapnya', 'Read More') ?> →</a>
     </div>

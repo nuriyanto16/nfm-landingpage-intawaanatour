@@ -3,8 +3,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="<?= base_url('/') ?>" class="brand">
-          <img class="brand__logo" src="<?= base_url('assets/img/logo-mark.png') ?>" alt="<?= esc(setting('site_name', 'Intawaanatour')) ?>" width="44" height="44">
-          <span class="brand__name"><?= esc(setting('site_name', 'Intawaanatour')) ?></span>
+          <img class="brand__logo" src="<?= base_url('assets/img/logo-mark.png') ?>" alt="<?= esc(setting('site_name', 'Inta Waana Tour')) ?>" width="44" height="44">
+          <span class="brand__name"><?= esc(setting('site_name', 'Inta Waana Tour')) ?></span>
         </a>
         <p><?= t(
             'Sewa speedboat private &amp; shared trip Labuan Bajo untuk menjelajahi keindahan Taman Nasional Komodo dengan nyaman dan berkelas.',
@@ -30,10 +30,10 @@
       <div>
         <h4><?= t('Paket Populer', 'Popular') ?></h4>
         <ul class="footer-links">
-          <li><a href="<?= base_url('trips/private-day-trip-komodo') ?>">Private Day Trip</a></li>
-          <li><a href="<?= base_url('trips/shared-trip-komodo') ?>">Shared Trip</a></li>
-          <li><a href="<?= base_url('trips/sunset-trip-labuan-bajo') ?>">Sunset Trip</a></li>
-          <li><a href="<?= base_url('contact') ?>"><?= t('Custom Trip', 'Custom Trip') ?></a></li>
+          <li><a href="<?= base_url('trips/private-full-day-sailing') ?>">Private Full Day Sailing</a></li>
+          <li><a href="<?= base_url('trips/private-sunset-trip') ?>">Private Sunset Trip</a></li>
+          <li><a href="<?= base_url('trips/open-trip-full-day-sailing') ?>">Open Trip Full Day</a></li>
+          <li><a href="<?= base_url('trips/open-trip-sunset') ?>">Open Trip Sunset</a></li>
         </ul>
       </div>
 
@@ -49,7 +49,7 @@
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; <?= date('Y') ?> <?= esc(setting('site_name', 'Intawaanatour')) ?>. <?= t('Hak cipta dilindungi.', 'All rights reserved.') ?></span>
+      <span>&copy; <?= date('Y') ?> <?= esc(setting('site_name', 'Inta Waana Tour')) ?>. <?= t('Hak cipta dilindungi.', 'All rights reserved.') ?></span>
       <span><?= t('Dibuat dengan ❤️ untuk Labuan Bajo', 'Made with ❤️ for Labuan Bajo') ?></span>
     </div>
   </div>

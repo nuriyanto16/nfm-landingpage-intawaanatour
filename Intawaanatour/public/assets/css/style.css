@@ -21,8 +21,8 @@
   --shadow:0 10px 30px rgba(10,29,51,.10);
   --shadow-lg:0 24px 60px rgba(10,29,51,.18);
   --container:1180px;
-  --font:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  --serif:'Fraunces','Plus Jakarta Sans',Georgia,'Times New Roman',serif;
 }
 
 *{box-sizing:border-box}
@@ -80,8 +80,8 @@ p{margin:0 0 1rem}
 .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-weight:700;font-size:1.35rem;color:#fff}
 .scrolled .brand{color:var(--navy)}
 .brand .brand__logo{width:44px;height:44px;border-radius:12px;background:#fff;object-fit:cover;box-shadow:var(--shadow);flex:0 0 auto}
-.brand__name{white-space:nowrap}
-.brand small{display:block;font-family:var(--font);font-weight:400;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.brand__name{white-space:nowrap;line-height:1.15}
+.brand small{display:block;font-family:var(--font);font-weight:400;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8;white-space:nowrap;margin-top:2px}
 .nav-menu{display:flex;align-items:center;gap:1.4rem;list-style:none;margin:0;padding:0}
 .nav-menu a{color:rgba(255,255,255,.92);font-weight:500;font-size:.95rem;position:relative;white-space:nowrap}
 .nav-cta{display:none}
@@ -422,3 +422,48 @@ a:hover{color:var(--gold)}
   .nav-menu a{color:#fff!important}
   .nav-toggle.open span{background:#fff}
 }
+
+/* ============================================================
+   CONTENT UPDATE 2026-06 — promo, harga spesial, spesifikasi kapal
+   ============================================================ */
+
+/* Banner penawaran spesial (atas navbar) */
+.promo-bar{display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap;
+  background:linear-gradient(90deg,var(--gold),var(--gold-2));color:#1c1305;
+  font-size:.85rem;font-weight:600;text-decoration:none;padding:.55rem 1rem;text-align:center;line-height:1.35}
+.promo-bar:hover{color:#1c1305;filter:brightness(1.04)}
+.promo-bar__tag{font-size:1rem;line-height:1}
+.promo-bar__cta{font-weight:700;white-space:nowrap;text-decoration:underline}
+@media(max-width:600px){.promo-bar__cta{display:none}}
+
+/* Badge promo pada kartu trip */
+.card__promo{position:absolute;top:14px;right:14px;background:var(--gold);color:#1c1305;
+  font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+  padding:.32rem .6rem;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+
+/* Harga coret + harga promo */
+.price-was{display:inline-block;color:var(--muted-d,#9fb3c8);font-size:.82em;font-weight:500;
+  text-decoration:line-through;margin-right:.45rem;opacity:.85}
+.card__price .price-now{color:var(--gold);font-weight:800}
+.price-note{font-size:.78rem;margin-top:.25rem;line-height:1.35}
+
+/* Flag promo di booking box */
+.promo-flag{display:inline-block;background:var(--gold);color:#1c1305;font-size:.7rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:.06em;padding:.3rem .6rem;border-radius:50px;margin-bottom:.5rem}
+.booking-box .price-tag .price-was{display:block;font-size:.55em;margin:0 0 .1rem}
+
+/* Termasuk / Tidak termasuk */
+.incexc{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem}
+@media(max-width:640px){.incexc{grid-template-columns:1fr}}
+.checklist--x li::before{content:"✕";color:#e2724f}
+
+/* Spesifikasi kapal */
+.boat-spec__head{max-width:680px;margin-bottom:1.6rem}
+.boat-spec__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:1.6rem;align-items:center}
+@media(max-width:760px){.boat-spec__grid{grid-template-columns:1fr}}
+.boat-spec__media img{width:100%;height:100%;max-height:340px;object-fit:cover;border-radius:16px;border:1px solid var(--border)}
+.spec-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.spec-table th,.spec-table td{padding:.7rem 1rem;text-align:left;font-size:.9rem;border-bottom:1px solid var(--border-soft)}
+.spec-table tr:last-child th,.spec-table tr:last-child td{border-bottom:0}
+.spec-table th{color:var(--muted-d,#9fb3c8);font-weight:600;width:46%;white-space:nowrap}
+.spec-table td{color:var(--text);font-weight:600}
