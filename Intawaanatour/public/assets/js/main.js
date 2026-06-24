@@ -148,3 +148,49 @@
     if (box) loadAsyncSection(box);
   });
 })();
+
+/* ===== Hero slider (slide 1 = video, sisanya gambar) ===== */
+(function () {
+  var slider = document.querySelector('.hero__slider');
+  if (!slider) return;
+  var slides = Array.prototype.slice.call(slider.querySelectorAll('.hero__slide'));
+  if (slides.length < 2) return;
+  var dotsWrap = document.querySelector('.hero__dots');
+  var i = 0, timer = null;
+  var dots = slides.map(function (_, idx) {
+    if (!dotsWrap) return null;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Slide ' + (idx + 1));
+    if (idx === 0) b.className = 'is-active';
+    b.addEventListener('click', function () { go(idx); });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+  function syncVideo() {
+    slides.forEach(function (s) {
+      var v = s.querySelector('video');
+      if (!v) return;
+      if (s.classList.contains('is-active')) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      else { v.pause(); }
+    });
+  }
+  function go(n) {
+    slides[i].classList.remove('is-active');
+    if (dots[i]) dots[i].classList.remove('is-active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('is-active');
+    if (dots[i]) dots[i].classList.add('is-active');
+    syncVideo();
+    schedule();
+  }
+  function schedule() {
+    clearTimeout(timer);
+    var hasVideo = !!slides[i].querySelector('video');
+    timer = setTimeout(function () { go(i + 1); }, hasVideo ? 9000 : 6000);
+  }
+  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    syncVideo();
+    schedule();
+  }
+})();

@@ -4,7 +4,16 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero__bg"><img src="<?= base_url('assets/img/hero.jpg') ?>" alt="<?= t('Speedboat Inta Waana Tour di perairan Labuan Bajo', 'Inta Waana Tour speedboat in Labuan Bajo waters') ?>" width="1920" height="1080" fetchpriority="high"></div>
+  <div class="hero__slider">
+    <div class="hero__slide is-active">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="<?= base_url('assets/img/hero-poster.jpg') ?>">
+        <source src="<?= base_url('assets/video/hero.mp4') ?>" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__slide"><img src="<?= base_url('assets/img/hero.jpg') ?>" alt="<?= t('Speedboat Inta Waana Tour di perairan Labuan Bajo', 'Inta Waana Tour speedboat in Labuan Bajo waters') ?>" loading="lazy"></div>
+    <div class="hero__slide"><img src="<?= base_url('assets/img/boat-aerial.jpg') ?>" alt="<?= t('Tampak udara speedboat Inta Waana', 'Aerial view of Inta Waana speedboat') ?>" loading="lazy"></div>
+  </div>
+  <div class="hero__dots" aria-label="<?= t('Navigasi slider', 'Slider navigation') ?>"></div>
   <div class="container">
     <div class="hero__inner">
       <span class="eyebrow" style="color:var(--gold)"><?= t('Sewa Speedboat • Labuan Bajo • Komodo', 'Speedboat Charter • Labuan Bajo • Komodo') ?></span>

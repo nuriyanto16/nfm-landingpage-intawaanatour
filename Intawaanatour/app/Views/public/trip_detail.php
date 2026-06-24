@@ -90,6 +90,15 @@ $isSunset = $trip['type'] === 'sunset' || str_contains($trip['slug'], 'sunset');
   </div>
 </section>
 
+<?php $destKeys = $isSunset
+    ? ['kelor', 'menjerite', 'rinca', 'kalong']
+    : ['padar', 'pink-beach', 'komodo', 'taka-makasar', 'manta-point', 'siaba']; ?>
+<section class="section">
+  <div class="container">
+    <?= partial('partials/destinations', ['keys' => $destKeys]) ?>
+  </div>
+</section>
+
 <section class="section section--sand">
   <div class="container">
     <?= partial('partials/boat_spec') ?>
