@@ -235,8 +235,9 @@ p{margin:0 0 1rem}
 .footer-links li{margin-bottom:.55rem}
 .footer-brand .brand{color:#fff;margin-bottom:1rem}
 .socials{display:flex;gap:.7rem;margin-top:1rem}
-.socials a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff}
+.socials a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:background .2s,color .2s}
 .socials a:hover{background:var(--gold);color:#3a2a10}
+.socials a svg{width:20px;height:20px;display:block}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 
 /* ---------- WhatsApp float ---------- */

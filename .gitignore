@@ -29,3 +29,8 @@ CREDENTIAL.md
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Deploy artifacts (besar / berisi kredensial) — jangan commit
+deploy/*.zip
+deploy/.env.production
+deploy/prod_database.sql
