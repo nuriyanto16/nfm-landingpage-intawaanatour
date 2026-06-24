@@ -53,8 +53,9 @@ class DatabaseSeeder extends Seeder
         // Trips — 4 produk resmi (Private & Open Trip × Full Day & Sunset)
         // Harga `price` = harga publish (coret), `promo_price` = penawaran spesial.
         // ---------------------------------------------------------------
-        $incImgsFullDay = ['assets/img/boat-bow.jpg', 'assets/img/gal-padar.jpg', 'assets/img/boat-cabin.jpg', 'assets/img/gal-manta.jpg'];
-        $incImgsSunset  = ['assets/img/boat-aerial.jpg', 'assets/img/gal-sunset.jpg', 'assets/img/boat-deck.jpg', 'assets/img/gal-komodo.jpg'];
+        // Galeri trip = foto destinasi asli (bahan GUEST INFORMATION).
+        $incImgsFullDay = ['assets/img/gal-padar.jpg', 'assets/img/gal-pinkbeach.jpg', 'assets/img/gal-komodo.jpg', 'assets/img/gal-manta.jpg', 'assets/img/gal-snorkel.jpg'];
+        $incImgsSunset  = ['assets/img/dest-kelor.jpg', 'assets/img/dest-kelor-2.jpg', 'assets/img/dest-menjerite.jpg', 'assets/img/dest-rinca.jpg', 'assets/img/dest-kalong.jpg', 'assets/img/dest-kalong-2.jpg'];
 
         $itinFullDayId = "Penjemputan dari hotel ke Marina Labuan Bajo\nTransfer menuju Pulau Padar\nPulau Padar (trekking & foto)\nPink Beach (berenang & snorkeling)\nPulau Komodo (trekking & lihat komodo)\nMakan siang di Taka Makasar (berenang & foto)\nManta Point (snorkeling bersama pari manta)\nPulau Siaba / Mawang (snorkeling)\nKembali ke Labuan Bajo";
         $itinFullDayEn = "Pick up from your hotel to Labuan Bajo Marina\nTransfer to Padar Island\nPadar Island (trekking & photo)\nPink Beach (swimming & snorkeling)\nKomodo Island (trekking & see the Komodo)\nLunch at Taka Makasar (swimming & photo)\nManta Point (snorkeling with manta rays)\nSiaba / Mawang Island (snorkeling)\nReturn to Labuan Bajo";
@@ -167,6 +168,23 @@ class DatabaseSeeder extends Seeder
             ['Manta Point', 'assets/img/gal-manta.jpg', 'Satwa'],
             ['Komodo', 'assets/img/gal-komodo.jpg', 'Satwa'],
             ['Snorkeling', 'assets/img/gal-snorkel.jpg', 'Aktivitas'],
+            // Foto asli tambahan (GALERY INTA WAANA SPEEDBOAT)
+            ['Pemandangan Haluan Speedboat', 'assets/img/gallery-01.jpg', 'Aktivitas'],
+            ['Menyusuri Perairan Komodo', 'assets/img/gallery-02.jpg', 'Aktivitas'],
+            ['Petualangan Laut Komodo', 'assets/img/gallery-03.jpg', 'Aktivitas'],
+            ['Air Jernih Taman Nasional Komodo', 'assets/img/gallery-04.jpg', 'Aktivitas'],
+            ['Inta Waana di Pink Beach', 'assets/img/gallery-05.jpg', 'Armada'],
+            ['Speedboat Inta Waana', 'assets/img/gallery-06.jpg', 'Armada'],
+            ['Geladak Buritan Speedboat', 'assets/img/gallery-07.jpg', 'Armada'],
+            ['Armada Inta Waana', 'assets/img/gallery-08.jpg', 'Armada'],
+            ['Speedboat Bersandar di Pulau', 'assets/img/gallery-09.jpg', 'Destinasi'],
+            ['Momen Trip Inta Waana', 'assets/img/gallery-10.jpg', 'Aktivitas'],
+            ['Berlayar Bersama Inta Waana', 'assets/img/gallery-11.jpg', 'Aktivitas'],
+            ['Eksplorasi Pulau Komodo', 'assets/img/gallery-12.jpg', 'Destinasi'],
+            ['Speedboat Inta Waana di Air Toska', 'assets/img/gallery-13.jpg', 'Armada'],
+            ['Profil Speedboat Inta Waana', 'assets/img/gallery-14.jpg', 'Armada'],
+            ['Inta Waana Tour Labuan Bajo', 'assets/img/gallery-15.jpg', 'Armada'],
+            ['Petualangan Bersama Inta Waana', 'assets/img/gallery-16.jpg', 'Armada'],
         ];
         foreach ($gallery as $i => $g) {
             $this->db->table('galleries')->insert([

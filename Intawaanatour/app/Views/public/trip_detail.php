@@ -16,7 +16,7 @@ $isSunset = $trip['type'] === 'sunset' || str_contains($trip['slug'], 'sunset');
     <div>
       <!-- Galeri -->
       <div class="detail-gallery">
-        <?php foreach (array_slice($images, 0, 5) as $img): ?>
+        <?php foreach (array_slice($images, 0, 6) as $img): ?>
           <a href="<?= img_url($img['image_path']) ?>" data-lightbox>
             <img src="<?= img_url($img['image_path']) ?>" alt="<?= esc(tr($trip, 'title')) ?>" loading="lazy">
           </a>
