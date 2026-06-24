@@ -149,48 +149,101 @@
   });
 })();
 
-/* ===== Hero slider (slide 1 = video, sisanya gambar) ===== */
+/* ===== Carousel crossfade generik (hero + galeri speedboat) ===== */
 (function () {
-  var slider = document.querySelector('.hero__slider');
-  if (!slider) return;
-  var slides = Array.prototype.slice.call(slider.querySelectorAll('.hero__slide'));
-  if (slides.length < 2) return;
-  var dotsWrap = document.querySelector('.hero__dots');
-  var i = 0, timer = null;
-  var dots = slides.map(function (_, idx) {
-    if (!dotsWrap) return null;
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', 'Slide ' + (idx + 1));
-    if (idx === 0) b.className = 'is-active';
-    b.addEventListener('click', function () { go(idx); });
-    dotsWrap.appendChild(b);
-    return b;
-  });
-  function syncVideo() {
-    slides.forEach(function (s) {
-      var v = s.querySelector('video');
-      if (!v) return;
-      if (s.classList.contains('is-active')) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-      else { v.pause(); }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function buildCarousel(cfg) {
+    var slides = cfg.slides, i = 0, timer = null, dots = [];
+
+    if (cfg.dotsWrap) {
+      slides.forEach(function (_, idx) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Slide ' + (idx + 1));
+        if (idx === 0) b.className = 'is-active';
+        b.addEventListener('click', function () { go(idx); });
+        cfg.dotsWrap.appendChild(b);
+        dots.push(b);
+      });
+    }
+
+    function schedule() {
+      if (reduce) return;
+      clearTimeout(timer);
+      var ms = cfg.intervalFor ? cfg.intervalFor(i) : cfg.interval;
+      timer = setTimeout(function () { go(i + 1); }, ms);
+    }
+    function go(n) {
+      slides[i].classList.remove('is-active');
+      if (dots[i]) dots[i].classList.remove('is-active');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('is-active');
+      if (dots[i]) dots[i].classList.add('is-active');
+      if (cfg.onChange) cfg.onChange(i);
+      schedule();
+    }
+
+    if (cfg.prevBtn) cfg.prevBtn.addEventListener('click', function () { go(i - 1); });
+    if (cfg.nextBtn) cfg.nextBtn.addEventListener('click', function () { go(i + 1); });
+
+    // Geser (swipe) sentuh kiri/kanan
+    var area = cfg.swipeArea || cfg.root, x0 = null, y0 = null;
+    if (area) {
+      area.addEventListener('touchstart', function (e) {
+        x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+      }, { passive: true });
+      area.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        var dy = e.changedTouches[0].clientY - y0;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1));
+        x0 = y0 = null;
+      }, { passive: true });
+    }
+
+    if (cfg.onChange) cfg.onChange(0);
+    schedule();
+  }
+
+  // --- Hero (slide 1 = video) ---
+  var heroSlider = document.querySelector('.hero__slider');
+  if (heroSlider) {
+    var hSlides = Array.prototype.slice.call(heroSlider.querySelectorAll('.hero__slide'));
+    if (hSlides.length >= 2) {
+      buildCarousel({
+        root: heroSlider,
+        slides: hSlides,
+        dotsWrap: document.querySelector('.hero__dots'),
+        prevBtn: document.querySelector('.hero__arrow--prev'),
+        nextBtn: document.querySelector('.hero__arrow--next'),
+        swipeArea: document.querySelector('.hero'),
+        interval: 6000,
+        intervalFor: function (idx) { return hSlides[idx].querySelector('video') ? 9000 : 6000; },
+        onChange: function (idx) {
+          hSlides.forEach(function (s, k) {
+            var v = s.querySelector('video');
+            if (!v) return;
+            if (k === idx) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+            else { v.pause(); }
+          });
+        }
+      });
+    }
+  }
+
+  // --- Galeri foto speedboat & slider lain ---
+  document.querySelectorAll('[data-carousel]').forEach(function (root) {
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.boat-slider__slide'));
+    if (slides.length < 2) return;
+    buildCarousel({
+      root: root,
+      slides: slides,
+      dotsWrap: root.querySelector('[data-carousel-dots]'),
+      prevBtn: root.querySelector('[data-carousel-prev]'),
+      nextBtn: root.querySelector('[data-carousel-next]'),
+      swipeArea: root,
+      interval: parseInt(root.getAttribute('data-interval'), 10) || 5000
     });
-  }
-  function go(n) {
-    slides[i].classList.remove('is-active');
-    if (dots[i]) dots[i].classList.remove('is-active');
-    i = (n + slides.length) % slides.length;
-    slides[i].classList.add('is-active');
-    if (dots[i]) dots[i].classList.add('is-active');
-    syncVideo();
-    schedule();
-  }
-  function schedule() {
-    clearTimeout(timer);
-    var hasVideo = !!slides[i].querySelector('video');
-    timer = setTimeout(function () { go(i + 1); }, hasVideo ? 9000 : 6000);
-  }
-  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    syncVideo();
-    schedule();
-  }
+  });
 })();

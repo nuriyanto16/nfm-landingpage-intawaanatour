@@ -40,12 +40,12 @@ $catalog = [
         'A small island with green hills, a white-sand beach and clear water, ideal for a light trek and a swim.',
     ],
     'menjerite' => [
-        'Pantai Menjerite', 'assets/img/boat-island.jpg',
+        'Pantai Menjerite', 'assets/img/dest-menjerite.jpg',
         'Teluk tersembunyi berair jernih dengan terumbu karang dangkal yang memesona untuk snorkeling santai.',
         'A hidden bay with clear water and stunning shallow reefs for relaxed snorkeling.',
     ],
     'rinca' => [
-        'Pulau Rinca', 'assets/img/gal-komodo.jpg',
+        'Pulau Rinca', 'assets/img/dest-rinca.jpg',
         'Lokasi alternatif melihat komodo di alam liar dengan lanskap savana dramatis dan satwa endemik.',
         'An alternative spot to see Komodo dragons in the wild amid dramatic savanna landscapes and endemic wildlife.',
     ],

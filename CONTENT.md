@@ -5,6 +5,23 @@
 
 ---
 
+## 2026-06-24 (lanjutan) — Foto destinasi asli, galeri speedboat About, artikel infografis, video home & alamat
+
+Materi baru dari `bahan/GUEST INFORMATION/`:
+- `Destinasi Full Day/*` → foto destinasi asli: `gal-padar`, `gal-pinkbeach`, `gal-komodo`, `gal-manta`, `gal-snorkel` (Siaba/Turtle).
+- `Destinasi Sunset/*` → `gal-kelor`, `gal-sunset` (Kalong), **baru** `dest-menjerite`, `dest-rinca` (partial `destinations.php` diarahkan ke file baru ini).
+- **Cover trip diganti foto destinasi**: `trip-private-fullday` (Padar), `trip-shared-fullday` (Pink), `trip-private-sunset` (Kalong), `trip-shared-sunset` (Kelor).
+- `FOTO SPEEDBOAT/*` → galeri foto speedboat di **halaman About** (slider gaya seaursula): `about-1..8.jpg` + `boat-profile.jpg` (spec). Partial `boat_spec.php` dirombak: slider foto + 3 blok (Spesifikasi Kapal · Navigasi & Keselamatan · Fasilitas) — data dari brosur + dokumen KSOP.
+- `Artikel/*` (3 infografis INTA WAANA) → **3 artikel baru** (cover + teks transkrip): "Things You Should Know Before Sailing", "The Best Time to Sailing", "What Should You Bring". Disisipkan via `NewArticlesSeeder` (non-destruktif).
+- `VIDEO HOME/lv_7152862779131661570_*.mp4` → **video hero home baru** (potret, air toska + speedboat Inta Waana). Di-encode ringan (720×1280, ~3.6MB, 20s, tanpa audio, faststart) + poster baru. Overlay hero diperterang & responsif mobile (`svh`).
+- `ALAMAT/alamat.jpeg` → **alamat resmi diperbarui**: *Jln. Raya Golo Koe, RT 021/RW 004, Kel. Wae Kelambu, Kec. Komodo, Kab. Manggarai Barat, NTT*. Diterapkan via `UpdateSettingsSeeder` (+ maps embed query baru).
+
+Perubahan UI terkait:
+- Badge/ikon **"2×100 HP Suzuki"** dihapus dari Home (atas permintaan); stat band diganti "4 · Pilihan Trip".
+- **Hero slider**: kini bisa **digeser (swipe) & panah ‹ ›** + dots (carousel generik dipakai ulang untuk slider About).
+
+---
+
 ## 2026-06-24 — Pembaruan Konten Besar dari materi GUEST INFORMATION
 
 Sumber resmi yang dipakai:

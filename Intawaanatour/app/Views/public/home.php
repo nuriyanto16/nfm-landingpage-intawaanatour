@@ -10,9 +10,11 @@
         <source src="<?= base_url('assets/video/hero.mp4') ?>" type="video/mp4">
       </video>
     </div>
-    <div class="hero__slide"><img src="<?= base_url('assets/img/hero.jpg') ?>" alt="<?= t('Speedboat Inta Waana Tour di perairan Labuan Bajo', 'Inta Waana Tour speedboat in Labuan Bajo waters') ?>" loading="lazy"></div>
-    <div class="hero__slide"><img src="<?= base_url('assets/img/boat-aerial.jpg') ?>" alt="<?= t('Tampak udara speedboat Inta Waana', 'Aerial view of Inta Waana speedboat') ?>" loading="lazy"></div>
+    <div class="hero__slide"><img src="<?= base_url('assets/img/trip-private-fullday.jpg') ?>" alt="<?= t('Pulau Padar, Taman Nasional Komodo', 'Padar Island, Komodo National Park') ?>" loading="lazy"></div>
+    <div class="hero__slide"><img src="<?= base_url('assets/img/about-1.jpg') ?>" alt="<?= t('Tampak udara speedboat Inta Waana', 'Aerial view of Inta Waana speedboat') ?>" loading="lazy"></div>
   </div>
+  <button class="hero__arrow hero__arrow--prev" type="button" aria-label="<?= t('Slide sebelumnya', 'Previous slide') ?>">‹</button>
+  <button class="hero__arrow hero__arrow--next" type="button" aria-label="<?= t('Slide berikutnya', 'Next slide') ?>">›</button>
   <div class="hero__dots" aria-label="<?= t('Navigasi slider', 'Slider navigation') ?>"></div>
   <div class="container">
     <div class="hero__inner">
@@ -36,7 +38,6 @@
   <div class="container split">
     <div class="split__media reveal">
       <img src="<?= base_url('assets/img/about.jpg') ?>" alt="<?= t('Armada speedboat Inta Waana Tour', 'Inta Waana Tour speedboat fleet') ?>" loading="lazy">
-      <div class="badge">2×100<small>HP Suzuki</small></div>
     </div>
     <div class="reveal">
       <span class="eyebrow"><?= t('Tentang Kami', 'About Us') ?></span>
@@ -118,7 +119,7 @@
       <div class="stat reveal"><b>9</b><span><?= t('Kapasitas Tamu', 'Guest Capacity') ?></span></div>
       <div class="stat reveal"><b>10+</b><span><?= t('Destinasi Komodo', 'Komodo Destinations') ?></span></div>
       <div class="stat reveal"><b>8,31 m</b><span><?= t('Speedboat Fiberglass', 'Fiberglass Speedboat') ?></span></div>
-      <div class="stat reveal"><b>2×100</b><span><?= t('HP Mesin Suzuki', 'HP Suzuki Engine') ?></span></div>
+      <div class="stat reveal"><b>4</b><span><?= t('Pilihan Trip', 'Trip Options') ?></span></div>
     </div>
   </div>
 </section>
