@@ -6,8 +6,8 @@
 <section class="hero">
   <div class="hero__slider">
     <div class="hero__slide is-active">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="<?= base_url('assets/img/hero-poster.jpg') ?>">
-        <source src="<?= base_url('assets/video/hero.mp4') ?>" type="video/mp4">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="<?= base_url('assets/img/hero-poster.jpg?v=2') ?>">
+        <source src="<?= base_url('assets/video/hero.mp4?v=2') ?>" type="video/mp4">
       </video>
     </div>
     <div class="hero__slide"><img src="<?= base_url('assets/img/trip-private-fullday.jpg') ?>" alt="<?= t('Pulau Padar, Taman Nasional Komodo', 'Padar Island, Komodo National Park') ?>" loading="lazy"></div>
